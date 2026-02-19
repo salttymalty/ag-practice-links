@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AG 2026 — All Practice Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-ground: #f7f5f2;
+      --color-surface: #ffffff;
+      --color-text: #2c2825;
+      --color-text-secondary: #666;
+      --color-text-muted: #999;
+      --color-border: #e0dcd8;
+      --color-primary: #c4704b;
+      --color-primary-light: #fff9f5;
+      --color-secondary: #5c7c6b;
+      --color-secondary-light: #f0f5f2;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Source Sans 3', system-ui, sans-serif;
+      --radius: 8px;
+      --shadow: 0 1px 3px hsla(25, 40%, 30%, 0.08);
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-ground);
+      padding: 2rem 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    a { color: var(--color-primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header { margin-bottom: 1.5rem; }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--color-text);
+      margin-bottom: 0.15rem;
+    }
+
+    .subtitle {
+      color: var(--color-text-muted);
+      font-size: 0.82rem;
+    }
+
+    /* ── How-to ── */
+    .how-to {
+      background: var(--color-primary-light);
+      border-left: 3px solid var(--color-primary);
+      padding: 0.75rem 1rem;
+      margin: 1.2rem 0;
+      font-size: 0.9rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .how-to strong { color: var(--color-primary); }
+    .how-to ol { padding-left: 1.4rem; margin-top: 0.3rem; }
+    .how-to li { margin-bottom: 0.15rem; }
+
+    /* ── Program Toggle ── */
+    .program-toggle {
+      display: flex;
+      gap: 0;
+      margin: 1.2rem 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1.5px solid var(--color-border);
+    }
+
+    .program-toggle button {
+      flex: 1;
+      padding: 0.55rem 1rem;
+      background: var(--color-surface);
+      border: none;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      min-height: 44px;
+    }
+
+    .program-toggle button.active {
+      background: var(--color-primary);
+      color: #fff;
+    }
+
+    .program-toggle button:not(.active):hover {
+      background: var(--color-primary-light);
+    }
+
+    /* ── Cast sub-toggle ── */
+    .cast-toggle {
+      display: flex;
+      gap: 0;
+      margin: 0.8rem 0 1rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1.5px solid var(--color-border);
+      max-width: 280px;
+    }
+
+    .cast-toggle button {
+      flex: 1;
+      padding: 0.5rem 0.8rem;
+      background: var(--color-surface);
+      border: none;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      min-height: 44px;
+    }
+
+    .cast-toggle button.active {
+      background: var(--color-secondary);
+      color: #fff;
+    }
+
+    .cast-toggle button:not(.active):hover {
+      background: var(--color-secondary-light);
+    }
+
+    /* ── Sections ── */
+    .program-section { display: none; }
+    .program-section.visible { display: block; }
+    .cast-section { display: none; }
+    .cast-section.visible { display: block; }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      margin: 1.8rem 0 0.4rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    .section-desc {
+      color: var(--color-text-secondary);
+      font-size: 0.88rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── Tables ── */
+    .song-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.5rem 0 1.2rem;
+    }
+
+    .song-table th {
+      text-align: left;
+      padding: 0.55rem 0.6rem;
+      background: var(--color-primary-light);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-primary);
+      border-bottom: 2px solid var(--color-primary);
+    }
+
+    .song-table td {
+      padding: 0.55rem 0.6rem;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: middle;
+    }
+
+    .song-table tr:last-child td { border-bottom: none; }
+
+    .student-name { font-weight: 700; }
+
+    .song-table a { font-weight: 600; }
+
+    .not-shared {
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+
+    code {
+      background: var(--color-secondary-light);
+      color: var(--color-secondary);
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-family: 'Source Code Pro', 'SF Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .tp-note {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+    }
+
+    .status-note {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--color-text-muted);
+    }
+
+    /* ── Song list (Boynton/SHR) ── */
+    .song-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .song-list li {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      margin-bottom: 0.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .song-list li a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      color: var(--color-text);
+      text-decoration: none;
+      min-height: 44px;
+      border-radius: var(--radius);
+      transition: background 0.15s;
+    }
+
+    .song-list li a:hover,
+    .song-list li a:focus {
+      background: var(--color-secondary-light);
+      outline: none;
+    }
+
+    .song-title { font-weight: 500; }
+
+    .recordings {
+      font-size: 0.8rem;
+      color: var(--color-secondary);
+      white-space: nowrap;
+    }
+
+    /* ── Tips ── */
+    .tip {
+      background: var(--color-secondary-light);
+      border-left: 3px solid var(--color-secondary);
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .tip strong { color: var(--color-secondary); }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.72rem;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 500px) {
+      body { padding: 1.2rem 0.75rem; font-size: 14px; }
+      h1 { font-size: 1.35rem; }
+      .song-table { font-size: 0.85rem; }
+      .song-table th, .song-table td { padding: 0.45rem 0.35rem; }
+      .program-toggle { flex-direction: column; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: white; max-width: none; padding: 0.5in; }
+      .program-toggle, .cast-toggle { display: none; }
+      .program-section, .cast-section { display: block !important; }
+      a { color: var(--color-text); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AG 2026 — Practice Links</h1>
+    <p class="subtitle">All programs in one place</p>
+  </header>
+
+  <div class="how-to">
+    <strong>How to practice:</strong>
+    <ol>
+      <li>Pick your program below, find your song, and click to open in Soundslice</li>
+      <li>Switch recordings: <strong>Full Mix</strong> (hear everything), <strong>Half Vox</strong> (half vocals), <strong>Ghost Vox</strong> (faint vocals), or <strong>Karaoke</strong> (no vocals)</li>
+      <li>Use the speed slider (try 80%) and loop button for tough sections</li>
+    </ol>
+  </div>
+
+  <div class="program-toggle" role="tablist">
+    <button class="active" onclick="showProgram('lmm')" role="tab" aria-selected="true">LMM 2026</button>
+    <button onclick="showProgram('boynton')" role="tab" aria-selected="false">Boynton</button>
+    <button onclick="showProgram('shr')" role="tab" aria-selected="false">Schoolhouse Rock</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LMM 2026                                               -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="lmm" class="program-section visible">
+
+    <div class="cast-toggle" role="tablist">
+      <button class="active" onclick="showCast('saturday')" role="tab" aria-selected="true">Saturday</button>
+      <button onclick="showCast('sunday')" role="tab" aria-selected="false">Sunday</button>
+    </div>
+
+    <div id="saturday" class="cast-section visible">
+      <h2>Your Solo</h2>
+      <table class="song-table">
+        <thead>
+          <tr><th>Student</th><th>Song</th><th>Key</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="student-name">Mary Shea</td>
+            <td><a href="https://www.soundslice.com/slices/rCzsc/" target="_blank" rel="noopener">One Perfect Moment</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td class="student-name">Amelia</td>
+            <td><a href="https://www.soundslice.com/slices/Gs2sc/" target="_blank" rel="noopener">What Else Can I Do</a></td>
+            <td><span class="status-note">Key TBD</span></td>
+          </tr>
+          <tr>
+            <td class="student-name">Lucia</td>
+            <td><a href="https://www.soundslice.com/slices/Mb2sc/" target="_blank" rel="noopener">Dear Theodosia</a></td>
+            <td><code>+5</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Gabe</td>
+            <td><a href="https://www.soundslice.com/slices/SKCsc/" target="_blank" rel="noopener">You'll Be Back</a></td>
+            <td><code>+4</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Holly</td>
+            <td><a href="https://www.soundslice.com/slices/9xnbc/" target="_blank" rel="noopener">Breathe</a></td>
+            <td><span class="status-note">Key TBD</span></td>
+          </tr>
+          <tr>
+            <td class="student-name">Cody</td>
+            <td><a href="https://www.soundslice.com/slices/W12sc/" target="_blank" rel="noopener">You're Welcome</a></td>
+            <td><code>-2</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Nora</td>
+            <td><span class="not-shared">Sick of Running</span></td>
+            <td><span class="status-note">Key TBD</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Group Numbers</h2>
+      <p class="section-desc">Everyone sings these.</p>
+      <table class="song-table">
+        <thead>
+          <tr><th>Song</th><th>Key</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/77tbc/" target="_blank" rel="noopener">Helpless</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/NBfsc/" target="_blank" rel="noopener">My Shot</a></td>
+            <td><span class="status-note">Key TBD</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/TZfsc/" target="_blank" rel="noopener">The Room Where It Happens</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/vBFbc/" target="_blank" rel="noopener">We Know the Way</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="sunday" class="cast-section">
+      <h2>Your Solo</h2>
+      <table class="song-table">
+        <thead>
+          <tr><th>Student</th><th>Song</th><th>Key</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="student-name">McKenna</td>
+            <td><a href="https://www.soundslice.com/slices/pxRsc/" target="_blank" rel="noopener">One Perfect Moment</a></td>
+            <td><code>+1</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Ella</td>
+            <td><span class="not-shared">Waiting on a Miracle</span></td>
+            <td><code>+1</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Josie</td>
+            <td><a href="https://www.soundslice.com/slices/Mb2sc/" target="_blank" rel="noopener">Dear Theodosia</a></td>
+            <td><code>+4</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Ruby</td>
+            <td><a href="https://www.soundslice.com/slices/x12sc/" target="_blank" rel="noopener">What Comes Next</a></td>
+            <td><span class="status-note">Key TBD</span></td>
+          </tr>
+          <tr>
+            <td class="student-name">Leland</td>
+            <td><a href="https://www.soundslice.com/slices/KJ2sc/" target="_blank" rel="noopener">You'll Be Back</a></td>
+            <td><code>+4</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Nellie</td>
+            <td><a href="https://www.soundslice.com/slices/9xnbc/" target="_blank" rel="noopener">Breathe</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td class="student-name">Siena</td>
+            <td><a href="https://www.soundslice.com/slices/Bb2sc/" target="_blank" rel="noopener">How Far I'll Go</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td class="student-name">Anthony</td>
+            <td><a href="https://www.soundslice.com/slices/W12sc/" target="_blank" rel="noopener">You're Welcome</a></td>
+            <td><code>-2</code></td>
+          </tr>
+          <tr>
+            <td class="student-name">Brooke</td>
+            <td><span class="not-shared">Sick of Running</span></td>
+            <td><span class="status-note">Key TBD</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Group Numbers</h2>
+      <p class="section-desc">Everyone sings these.</p>
+      <table class="song-table">
+        <thead>
+          <tr><th>Song</th><th>Key</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/77tbc/" target="_blank" rel="noopener">Helpless</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/NBfsc/" target="_blank" rel="noopener">My Shot</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/TZfsc/" target="_blank" rel="noopener">The Room Where It Happens</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.soundslice.com/slices/vBFbc/" target="_blank" rel="noopener">We Know the Way</a></td>
+            <td><code>0</code> <span class="tp-note">original</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- BOYNTON                                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="boynton" class="program-section">
+    <p class="section-desc">Bouncing with Boynton — 4 recordings per song (Full Mix, Half Vox, Ghost Vox, Karaoke). Use the recording picker in the Soundslice player to switch.</p>
+
+    <ul class="song-list">
+      <li><a href="https://www.soundslice.com/slices/bR3sc/" target="_blank" rel="noopener">
+        <span class="song-title">The Bunny Rabbit Show</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/sR3sc/" target="_blank" rel="noopener">
+        <span class="song-title">Barnyard Dance</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/1R3sc/" target="_blank" rel="noopener">
+        <span class="song-title">Snuggle Puppy</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/8R3sc/" target="_blank" rel="noopener">
+        <span class="song-title">Your Personal Penguin</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/dR3sc/" target="_blank" rel="noopener">
+        <span class="song-title">So Long, Doggies</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SCHOOLHOUSE ROCK                                        -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="shr" class="program-section">
+    <p class="section-desc">Schoolhouse Rock — 4 recordings per song (Full Mix, Half Vox, Ghost Vox, Karaoke). Use the recording picker in the Soundslice player to switch.</p>
+
+    <ul class="song-list">
+      <li><a href="https://www.soundslice.com/slices/7R3sc/" target="_blank" rel="noopener">
+        <span class="song-title">Three Is a Magic Number</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/WR3sc/" target="_blank" rel="noopener">
+        <span class="song-title">I'm Just a Bill</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/BR3sc/" target="_blank" rel="noopener">
+        <span class="song-title">Conjunction Junction</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/ZR3sc/" target="_blank" rel="noopener">
+        <span class="song-title">Interjections</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+      <li><a href="https://www.soundslice.com/slices/LR3sc/" target="_blank" rel="noopener">
+        <span class="song-title">Lolly Get Your Adverbs Here</span>
+        <span class="recordings">4 rec</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <strong>Work your way down.</strong> Start with Half Vox (you can clearly hear the melody). Move to Ghost Vox (barely there). Graduate to Karaoke (you're on your own).
+  </div>
+
+  <div class="tip">
+    <strong>The loop trick.</strong> Click the loop button (two arrows in a circle), then drag the blue bar over the measures you want to repeat. Combined with speed change, this is the single most useful practice tool.
+  </div>
+
+  <footer>
+    AG 2026 &middot; Actors Garden &middot; Updated Feb 18, 2026
+  </footer>
+
+  <script>
+    function showProgram(id) {
+      document.querySelectorAll('.program-section').forEach(el => el.classList.remove('visible'));
+      document.querySelectorAll('.program-toggle button').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      document.getElementById(id).classList.add('visible');
+      event.target.classList.add('active');
+      event.target.setAttribute('aria-selected', 'true');
+    }
+
+    function showCast(cast) {
+      document.querySelectorAll('.cast-section').forEach(el => el.classList.remove('visible'));
+      document.querySelectorAll('.cast-toggle button').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      document.getElementById(cast).classList.add('visible');
+      event.target.classList.add('active');
+      event.target.setAttribute('aria-selected', 'true');
+    }
+  </script>
+
+</body>
+</html>
